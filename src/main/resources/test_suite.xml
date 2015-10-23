@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+    <test name="Pelda test" >
+        <classes>
+            <class name="PeldaTest" >
+                <methods>
+                    <include name="peldaTest" >
+                        <parameter name="userNum" value="2" />
+                        <parameter name="workoutPerUser" value="5" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
