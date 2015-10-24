@@ -1,3 +1,5 @@
+package common;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +22,21 @@ public class TestDatabase {
 
         createUsers(userNum);
         createWorkouts(workoutNumPerUser);
+    }
+
+    public void addUser(User user) {
+        users.put(user.getName(), user);
+    }
+
+    public void addWorkout(User user, WorkoutVo workout) {
+        List<WorkoutVo> workoutList = workouts.get(user.getName());
+        if(workoutList != null) {
+            workoutList.add(workout);
+        } else {
+            workoutList = new ArrayList<>();
+            workoutList.add(workout);
+            workouts.put(user.getName(), workoutList);
+        }
     }
 
     private void createUsers(int userNum) {
@@ -51,4 +68,11 @@ public class TestDatabase {
         }
     }
 
+    public Map<String, User> getUsers() {
+        return users;
+    }
+
+    public Map<String, List<WorkoutVo>> getWorkouts() {
+        return workouts;
+    }
 }

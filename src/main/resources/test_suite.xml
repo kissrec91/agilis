@@ -3,12 +3,24 @@
 <suite name="TestAll">
     <test name="Pelda test" >
         <classes>
-            <class name="PeldaTest" >
+            <class name="common.PeldaTest" >
                 <methods>
                     <include name="peldaTest" >
                         <parameter name="userNum" value="2" />
                         <parameter name="workoutPerUser" value="5" />
                     </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Display tests" >
+        <classes>
+            <class name="no_tdd.WorkoutDisplayTests" >
+                <methods>
+                    <include name="testAllWorkoutDisplay" />
+                    <include name="testWorkoutPerSport" />
+                    <include name="testWrongUser" />
                 </methods>
             </class>
         </classes>
